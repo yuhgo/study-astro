@@ -1,18 +1,9 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 
 type Props = {
-  frontmatter: {
-    title: string;
-    pubDate: string;
-    description: string;
-    author: string;
-    image: {
-      url: string;
-      alt: string;
-    };
-    tags: string[];
-  };
+  frontmatter: CollectionEntry<"posts">["data"]
 };
 
 const { frontmatter } = Astro.props;
